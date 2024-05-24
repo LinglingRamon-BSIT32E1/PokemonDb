@@ -1,0 +1,30 @@
+﻿@model IEnumerable<PokemonDb.Models.Pokemon>
+
+@{
+    ViewData["Title"] = "Pokemon List";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokémon App</title>
+    <link rel="stylesheet" href="~/css/site.css">
+</head>
+<body>
+    <header>
+        <h1>Pokémon Database</h1>
+        <input type="text" id="searchBar" placeholder="Search for a Pokémon...">
+    </header>
+    <main id="pokemonContainer"></main>
+    <div id="pokemonModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="pokemonInfo"></div>
+        </div>
+    </div>
+    <script src="~/js/site.js"></script>
+</body>
+</html>
+

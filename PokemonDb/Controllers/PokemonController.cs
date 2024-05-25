@@ -33,14 +33,17 @@ namespace PokemonDb.Controllers
             var content = await response.Content.ReadAsStringAsync();
             var json = JObject.Parse(content);
 
+            Console.WriteLine(json.ToString());
+
             var pokemon = new Pokemon
             {
                 Name = json["name"].ToString(),
-                Height = json["height"].ToObject<int>(),
-                Weight = json["weight"].ToObject<int>(),
-                Types = json["types"].Select(t => t["type"]["name"].ToString()).ToList(),
+                Height = (int)json["height"],
+                Weight = (int)json["weight"],
                 Moves = json["moves"].Select(m => m["move"]["name"].ToString()).ToList(),
-                Abilities = json["abilities"].Select(a => a["ability"]["name"].ToString()).ToList()
+                Abilities = json["abilities"].Select(a => a["ability"]["name"].ToString()).ToList(),
+                Types = json["types"].Select(t => t["type"]["name"].ToString()).ToList(),
+                SpriteUrl = json["sprites"]["front_default"].ToString()
             };
 
             return View(pokemon);

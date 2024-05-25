@@ -44,8 +44,8 @@ main {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 20px 0;
-    width: 80%;
+    margin:  0;
+    width: 100%;
 }
 
 .card {
@@ -103,7 +103,7 @@ main {
         cursor: pointer;
     }
 
-/* Loading Spinner Styles */
+
 #loadingSpinner {
     position: fixed;
     top: 50%;
